@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Ciao Mondo</h1>
+        <h1>Lista Dischi</h1>
     </div>
 
     <!-- TEMPLATE: DISCO -->
