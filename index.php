@@ -9,14 +9,24 @@
     <title>PHP Ajax Dischi musicali</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Lista Dischi</h1>
+    <header>
+        <div class="container">
+            <img src="media/logo.png" alt="logo" />
+        </div>
+    </header>
+
+    <div class="cds-container container">
+        <!-- Template Disco -->
     </div>
 
     <!-- TEMPLATE: DISCO -->
-    <script id="entry-template" type="text/x-handlebars-template">
-        <div class="disco">
-            
+    <script id="template" type="text/x-handlebars-template">
+        <div class="cd">
+            <img src="{{poster}}" alt="">
+            <h3>{{title}}</h3>
+            <span class="author">{{author}}</span>
+            <span>{{genre}}</span>
+            <span class="year">{{year}}</span> 
         </div>
     </script>
    

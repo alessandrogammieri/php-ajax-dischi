@@ -7,12 +7,32 @@ function listDisco() {
         url: "api.php",
         method: "GET",
         success: function (data) {
-            console.log(data);
+            printDisco(data);
         },
         error: function () {
             alert("C'è stato un errore in download");
         }
     });
+}
+
+function printDisco(data) { 
+    // Creo il clone del messaggio con Handlebars
+    var source = $("#template").html();
+    var template = Handlebars.compile(source);
+    // Ciclo for per generare i dischi
+    for (var i = 0; i < data.length; i++) {
+        var dischi = data[i];
+        var context = {
+        poster: dischi.poster,
+        title: dischi.title,
+        author: dischi.author,
+        genre: dischi.genre,
+        year: dischi.year
+        };
+        // Stampo l'input a schermo
+        var html = template(context);
+        $(".cds-container").append(html);
+    }
 }
 
 $(document).ready(init);
